@@ -195,10 +195,10 @@ the wrong direction change INVERT_X_DIR or INVERT_Y_DIR.
 // length of filament pulled inside the heater. For repsnap or older
 // skeinforge use hiher values.
 //  Overridden if EEPROM activated.
-#define EXT0_MAX_FEEDRATE 60
+#define EXT0_MAX_FEEDRATE 80
 // Feedrate from halted extruder in mm/s
 //  Overridden if EEPROM activated.
-#define EXT0_MAX_START_FEEDRATE 45
+#define EXT0_MAX_START_FEEDRATE 40
 // Acceleration in mm/s^2
 //  Overridden if EEPROM activated.
 #define EXT0_MAX_ACCELERATION 6500
@@ -230,13 +230,9 @@ A good start is 30 lower then the optimal value. You need to leave room for cool
  Overridden if EEPROM activated.
 */
 #define EXT0_PID_INTEGRAL_DRIVE_MIN 60
-/** P-gain.  Overridden if EEPROM activated. */
-#define EXT0_PID_P   11.63
-/** I-gain. Overridden if EEPROM activated.
-*/
-#define EXT0_PID_I   0.43
-/** Dgain.  Overridden if EEPROM activated.*/
-#define EXT0_PID_D 78.65
+#define EXT0_PID_P   15.91  
+#define EXT0_PID_I   0.75
+#define EXT0_PID_D 84.02
 // maximum time the heater is can be switched on. Max = 255.  Overridden if EEPROM activated.
 #define EXT0_PID_MAX 255
 /** \brief Faktor for the advance algorithm. 0 disables the algorithm.  Overridden if EEPROM activated.
@@ -543,7 +539,7 @@ A good start is 30 lower then the optimal value. You need to leave room for cool
 /** Dgain.  Overridden if EEPROM activated.*/
 #define HEATED_BED_PID_DGAIN 40.0
 // maximum time the heater is can be switched on. Max = 255.  Overridden if EEPROM activated.
-#define HEATED_BED_PID_MAX 230
+#define HEATED_BED_PID_MAX 255
 
 /** Include PID control for all heaters. */
 #define TEMP_PID true
@@ -712,7 +708,7 @@ on this endstop.
 
 /** \brief Printer radius in mm, measured from the center of the print area to the vertical smooth rod.
 */
-#define PRINTER_RADIUS 146.0
+#define PRINTER_RADIUS 145.7
 
 /**  \brief Horizontal distance bridged by the diagonal push rod when the end effector is in the center. It is pretty close to 50% of the push rod length (250 mm).
 */
@@ -799,14 +795,14 @@ If the interval at full speed is below this value, smoothing is disabled for tha
 /** \brief X, Y, Z max acceleration in mm/s^2 for printing moves or retracts. Make sure your printer can go that high! 
  Overridden if EEPROM activated.
 */
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_X 2250
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Y 2250
-#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Z 2250
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_X 4250
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Y 4250
+#define MAX_ACCELERATION_UNITS_PER_SQ_SECOND_Z 4250
 
 /** \brief X, Y, Z max acceleration in mm/s^2 for travel moves.  Overridden if EEPROM activated.*/
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_X 2000
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Y 2000
-#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Z 2000
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_X 3000
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Y 3000
+#define MAX_TRAVEL_ACCELERATION_UNITS_PER_SQ_SECOND_Z 3000
 
 /** \brief Maximum allowable jerk.
 
@@ -831,8 +827,8 @@ Corner can be printed with full speed of 50 mm/s
 
 Overridden if EEPROM activated.
 */
-#define MAX_JERK 20.0
-#define MAX_ZJERK 20.0
+#define MAX_JERK 17.5
+#define MAX_ZJERK 17.5
 
 /** \brief Number of moves we can cache in advance.
 
