@@ -571,6 +571,17 @@ SET_OUTPUT(ANALYZER_CH7);
   TCCR1B =  (_BV(WGM12) | _BV(CS10)); // no prescaler == 0.0625 usec tick | 001 = clk/1
   OCR1A=65500; //start off with a slow frequency.
   TIMSK1 |= (1<<OCIE1A); // Enable interrupt
+  
+  
+  /*
+###########################
+adding code to turn on fan full time on hotend to avoid PWM issues
+###########################
+*/
+pinMode(7, OUTPUT);
+digitalWrite(7, HIGH);
+   
+  
 }
 
 void defaultLoopActions() {
