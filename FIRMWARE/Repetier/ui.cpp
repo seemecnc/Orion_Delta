@@ -2158,6 +2158,10 @@ void UIDisplay::executeAction(int action) {
 #if FAN_PIN>-1
      WRITE(FAN_PIN,0);
 #endif
+// adding heated bed kill to the kill button function
+#if HEATER_BED_PIN>-1
+    WRITE(HEATER_BED_PIN,0);
+#endif 
       while(1) {}
 
       break;
