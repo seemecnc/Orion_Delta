@@ -4,14 +4,17 @@
 
 THIS FIRMWARE IS FOR THE ORION DELTA
 
+
+### Changelog: ###
 added 
 // adding heated bed kill to the kill button function
 #if HEATER_BED_PIN>-1
     WRITE(HEATER_BED_PIN,0);
 #endif 
-
 to ui.cpp line ~2161 to disable heated bed when kill button is pressed
 
+
+added kill button code to ui.cpp to home machine, kill heaters and not hang
 
 
     This file is part of Repetier-Firmware.

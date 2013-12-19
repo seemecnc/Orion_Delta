@@ -2142,8 +2142,8 @@ void UIDisplay::executeAction(int action) {
       OUT_P_I_LN("Fanspeed:",get_fan_speed());
       break;
     case UI_ACTION_KILL:
-      cli(); // Don't allow interrupts to do their work
-      kill(false);
+      //cli(); // Don't allow interrupts to do their work
+      //kill(false);
       manage_temperatures();
       pwm_pos[0] = pwm_pos[1] = pwm_pos[2] = pwm_pos[3]=0;
 #if EXT0_HEATER_PIN>-1
@@ -2162,7 +2162,15 @@ void UIDisplay::executeAction(int action) {
 #if HEATER_BED_PIN>-1
     WRITE(HEATER_BED_PIN,0);
 #endif 
-      while(1) {}
+// Home the machine after turning off heaters when kill button pressed
+      home_axis(true,true,true);
+      printPosition();
+//reset controller after homing
+      resetFunc();
+
+      // da fuq?  endless loops of loopy loops
+      //while(1) {}
+     
 
       break;
     case UI_ACTION_RESET:
