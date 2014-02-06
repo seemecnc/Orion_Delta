@@ -18,7 +18,7 @@
 
 #ifndef CONFIGURATION_H
 #define CONFIGURATION_H
-
+#define BEEPER_PIN 79
 /* Some words on units:
 
 From 0.80 onwards the units used are unified for easier configuration, watch out when transfering from older configs!
